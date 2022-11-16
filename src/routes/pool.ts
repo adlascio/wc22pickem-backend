@@ -1,6 +1,6 @@
 import { prisma } from "../lib/prisma";
 import { FastifyInstance } from "fastify";
-import { z } from "zod";
+import { string, z } from "zod";
 import ShortUniqueId from "short-unique-id";
 import { authenticate } from "../plugins/authenticate";
 
@@ -213,9 +213,10 @@ export async function poolRoutes(server: FastifyInstance) {
         secondTeamPoints: number;
         gameId: string;
       }
-      const resultsObj = results.reduce((acc, result) => {
-        acc[result.gameId] = result;
-        return acc;
+
+      const resultsObj: { [key: string]: Result } = {};
+      results.forEach((result) => {
+        resultsObj[result.gameId] = result;
       }, {});
 
       const participants = poolParticipants?.participants.map((participant) => {
