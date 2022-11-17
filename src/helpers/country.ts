@@ -1,4 +1,5 @@
-import { iso31661, iso31662 } from "iso-3166";
+import { iso31661 } from "../data/iso31661.js";
+import { iso31662 } from "../data/iso31662.js";
 
 export const getName = (code: string) => {
   if (code.length === 2) {

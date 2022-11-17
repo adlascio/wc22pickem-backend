@@ -1,8 +1,8 @@
-import { prisma } from "../lib/prisma";
+import { prisma } from "../lib/prisma.js";
 import { FastifyInstance } from "fastify";
 import { string, z } from "zod";
 import ShortUniqueId from "short-unique-id";
-import { authenticate } from "../plugins/authenticate";
+import { authenticate } from "../plugins/authenticate.js";
 
 export async function poolRoutes(server: FastifyInstance) {
   server.get("/pools/count", async () => {

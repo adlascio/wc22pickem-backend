@@ -1,8 +1,8 @@
-import { prisma } from "../lib/prisma";
+import { prisma } from "../lib/prisma.js";
 import { FastifyInstance } from "fastify";
-import { authenticate } from "../plugins/authenticate";
+import { authenticate } from "../plugins/authenticate.js";
 import { z } from "zod";
-import { getName } from "../helpers/country";
+import { getName } from "../helpers/country.js";
 
 export async function gameRoutes(server: FastifyInstance) {
   server.get(

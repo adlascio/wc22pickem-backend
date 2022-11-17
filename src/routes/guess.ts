@@ -1,6 +1,6 @@
-import { prisma } from "../lib/prisma";
+import { prisma } from "../lib/prisma.js";
 import { FastifyInstance } from "fastify";
-import { authenticate } from "../plugins/authenticate";
+import { authenticate } from "../plugins/authenticate.js";
 import { z } from "zod";
 
 export async function guessRoutes(server: FastifyInstance) {

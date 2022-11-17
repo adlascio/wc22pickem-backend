@@ -1,4 +1,4 @@
-import { prisma } from "../lib/prisma";
+import { prisma } from "../lib/prisma.js";
 import { FastifyInstance } from "fastify";
 
 export async function userRoutes(server: FastifyInstance) {
