@@ -8,6 +8,8 @@ import { guessRoutes } from "./routes/guess.js";
 import { userRoutes } from "./routes/user.js";
 import { authRoutes } from "./routes/auth.js";
 
+const PORT = process.env.PORT || 3000;
+
 async function bootstrap() {
   const server = Fastify({ logger: true });
 
@@ -25,7 +27,7 @@ async function bootstrap() {
   await server.register(authRoutes);
   await server.register(gameRoutes);
 
-  await server.listen({ port: 3333 });
+  await server.listen({ port: PORT as number, host: "0.0.0.0" });
 }
 
 bootstrap();
