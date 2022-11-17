@@ -25,7 +25,7 @@ async function bootstrap() {
   await server.register(authRoutes);
   await server.register(gameRoutes);
 
-  await server.listen({ port: 3333, host: "0.0.0.0" });
+  await server.listen({ port: 3333 });
 }
 
 bootstrap();
