@@ -11,15 +11,12 @@ import { authRoutes } from "./routes/auth";
 async function bootstrap() {
   const server = Fastify({ logger: true });
 
-  const date = new Date();
-  console.log("date", date.toISOString());
-
   await server.register(cors, {
     origin: true,
   });
 
   await server.register(jwt, {
-    secret: "supersecret",
+    secret: process.env.JWT_SECRET as string,
   });
 
   await server.register(poolRoutes);
